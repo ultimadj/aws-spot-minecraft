@@ -9,9 +9,6 @@
 1. terraform state list
 1. terraform state show aws_spot_instance_request.mc_server
 
-### SSH Access
-1. ssh -i ../aws-spot-minecraft-secrets/aws-spot-minecraft-secrets_id_rsa ec2-user@ec2-54-242-163-89.compute-1.amazonaws.com
-
 ### Sample State
 ```
 ddjohnson@DESKTOP-QS49IQK:~/z_team/aws-spot-minecraft/terraform$ terraform state show aws_spot_instance_request.mc_server
