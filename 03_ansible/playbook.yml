@@ -25,3 +25,24 @@
         owner: ec2-user
         group: ec2-user
         mode: '0755'
+    - name: Copy eula.txt with owner and permissions
+      copy:
+        src: src/eula.txt
+        dest: /var/lib/minecraft/eula.txt
+        owner: ec2-user
+        group: ec2-user
+        mode: '0664'
+    - name: Copy server.properties with owner and permissions
+      copy:
+        src: src/server.properties
+        dest: /var/lib/minecraft/server.properties
+        owner: ec2-user
+        group: ec2-user
+        mode: '0664'
+    - name: Copy connect.sh with owner and permissions
+      copy:
+        src: src/connect.sh
+        dest: /var/lib/minecraft/connect.sh
+        owner: ec2-user
+        group: ec2-user
+        mode: '0755'
