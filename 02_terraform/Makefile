@@ -7,4 +7,4 @@ init:
 	terraform init
 
 inventory:
-	terraform apply -auto-approve -target=local_file.ansible_inventory
+	terraform apply -auto-approve -target=local_file.ansible_inventory -target=local_file.connect_sh
