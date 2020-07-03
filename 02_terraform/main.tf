@@ -60,12 +60,12 @@ resource "local_file" "ansible_inventory" {
     filename = "${path.module}/../03_ansible/inventory.ini"
 }
 
-resource "local_file" "connect_sh" {
+resource "local_file" "script_env" {
     content     = <<-EOT
       #!/bin/bash
-      DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-      ssh -i $DIR/../../../aws-spot-minecraft-secrets/aws-spot-minecraft-secrets_id_rsa ec2-user@${aws_spot_instance_request.mc_server.public_dns}
+      export MC_KEY=../../../aws-spot-minecraft-secrets/aws-spot-minecraft-secrets_id_rsa
+      export MC_USER_HOST=ec2-user@${aws_spot_instance_request.mc_server.public_dns}
     EOT
 
-    filename = "${path.module}/../04_admin/bin/connect.sh"
+    filename = "${path.module}/../04_admin/bin/env.sh"
 }
